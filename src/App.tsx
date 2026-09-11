@@ -250,7 +250,7 @@ export function App() {
       </main>
 
       {/* Footer */}
-      
+      <Footer />
     </div>
   );
 }
