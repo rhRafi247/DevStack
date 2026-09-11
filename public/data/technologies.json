@@ -1,0 +1,167 @@
+[
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
+    "icon": "/icons/react.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular",
+    "badgeColor": "sky"
+  },
+  {
+    "id": "vue",
+    "name": "Vue.js",
+    "category": "Frontend",
+    "description": "An approachable, performant, and versatile framework for building web user interfaces.",
+    "icon": "/icons/vue.svg",
+    "rating": 4.8,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Versatile",
+    "badgeColor": "emerald"
+  },
+  {
+    "id": "svelte",
+    "name": "Svelte",
+    "category": "Frontend",
+    "description": "Cybernetically enhanced web apps with compile-time reactivity and zero virtual DOM overhead.",
+    "icon": "/icons/svelte.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Fast",
+    "badgeColor": "orange"
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "Frontend",
+    "description": "The React framework for full-stack web applications with hybrid static & server rendering.",
+    "icon": "/icons/nextjs.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Fullstack",
+    "badgeColor": "slate"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "An asynchronous event-driven JavaScript runtime built on Chrome's V8 engine.",
+    "icon": "/icons/nodejs.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Standard",
+    "badgeColor": "emerald"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "description": "A powerful, open-source object-relational database system with proven reliability.",
+    "icon": "/icons/postgresql.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Top SQL",
+    "badgeColor": "sky"
+  },
+  {
+    "id": "redis",
+    "name": "Redis",
+    "category": "Database",
+    "description": "In-memory data structure store used as a high-speed database, cache, and message broker.",
+    "icon": "/icons/redis.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Cache",
+    "badgeColor": "rose"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Language",
+    "description": "The versatile, ubiquitous scripting language powering dynamic behavior across the web.",
+    "icon": "/icons/javascript.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Ubiquitous",
+    "badgeColor": "amber"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Language",
+    "description": "A strongly typed programming language that builds on JavaScript for robust tooling.",
+    "icon": "/icons/typescript.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Essential",
+    "badgeColor": "sky"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "category": "Language",
+    "description": "A secure, object-oriented programming language designed for portability and scale.",
+    "icon": "/icons/java.svg",
+    "rating": 4.6,
+    "difficulty": "Intermediate",
+    "badge": "Robust",
+    "badgeColor": "blue"
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind CSS",
+    "category": "Styling",
+    "description": "A utility-first CSS framework packed with classes that can be composed to build custom UI.",
+    "icon": "/icons/tailwind.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Modern",
+    "badgeColor": "teal"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "category": "DevOps",
+    "description": "A platform designed to build, share, and run containerized applications reliably.",
+    "icon": "/icons/docker.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Containers",
+    "badgeColor": "sky"
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "category": "Language",
+    "description": "High-level, interpreted programming language known for readability, AI, and scripting.",
+    "icon": "/icons/python.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Versatile",
+    "badgeColor": "blue"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "Database",
+    "description": "A flexible document database designed for modern apps, cloud scaling, and JSON data.",
+    "icon": "/icons/mongodb.svg",
+    "rating": 4.7,
+    "difficulty": "Beginner-Friendly",
+    "badge": "NoSQL",
+    "badgeColor": "emerald"
+  },
+  {
+    "id": "graphql",
+    "name": "GraphQL",
+    "category": "Backend",
+    "description": "A query language for your API, and a server-side runtime for executing queries with existing data.",
+    "icon": "/icons/graphql.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Flexible API",
+    "badgeColor": "pink"
+  }
+]

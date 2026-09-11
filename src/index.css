@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "react-toastify/dist/ReactToastify.css";
+
+@layer base {
+  :root {
+    --theme-gradient: linear-gradient(135deg, #ff5e3a 0%, #ff2a85 52%, #8b5cf6 100%);
+    --theme-gradient-hover: linear-gradient(135deg, #ea4e2a 0%, #e61975 52%, #7c3aed 100%);
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: #1e293b;
+    background-color: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Centralized Gradient Utilities */
+.bg-theme-gradient {
+  background: var(--theme-gradient);
+}
+
+.bg-theme-gradient:hover {
+  background: var(--theme-gradient-hover);
+}
+
+.text-theme-gradient {
+  background: var(--theme-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-theme-gradient {
+  border-image: var(--theme-gradient) 1;
+}
+
+/* Custom subtle animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Toastify custom modern touches */
+.Toastify__toast {
+  border-radius: 12px !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.9rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
