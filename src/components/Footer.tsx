@@ -60,7 +60,71 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Links Column: Product */}
-          
+          <div className="md:col-span-2 sm:col-span-4 text-left">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">
+              Product
+            </h4>
+            <ul className="space-y-2.5 text-sm text-slate-500">
+              <li>
+                <a href="#home" className="hover:text-pink-600 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#technologies" className="hover:text-pink-600 transition-colors">
+                  Technologies
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-pink-600 transition-colors">
+                  Projects
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Links Column: Company */}
+          <div className="md:col-span-3 sm:col-span-4 text-left">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">
+              Company
+            </h4>
+            <ul className="space-y-2.5 text-sm text-slate-500">
+              <li>
+                <a href="#about" className="hover:text-pink-600 transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-pink-600 transition-colors">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#careers" className="hover:text-pink-600 transition-colors">
+                  Careers
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Links Column: Legal */}
+          <div className="md:col-span-2 sm:col-span-4 text-left">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2.5 text-sm text-slate-500">
+              <li>
+                <a href="#privacy" className="hover:text-pink-600 transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#terms" className="hover:text-pink-600 transition-colors">
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
