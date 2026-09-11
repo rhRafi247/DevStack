@@ -6,8 +6,7 @@ import { StackSidebar } from './components/StackSidebar';
 import { Footer } from './components/Footer';
 import type { Technology, Category } from './types';
 import { ToastContainer, toast } from 'react-toastify';
-import { Loader2, Sparkles, FolderGit2, CheckCircle2 } from 'lucide-react';
-
+import { Loader2, Sparkles, FolderGit2, RotateCw, Layers, ArrowRight } from 'lucide-react';
 
 const CATEGORIES: Category[] = [
   'All',
@@ -26,7 +25,7 @@ export function App() {
   const [error, setError] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<Category>('All');
 
-  const loadData = async (delay = 500) => {
+  const loadData = async (delay = 400) => {
     setLoading(true);
     setError(null);
     try {
@@ -41,7 +40,7 @@ export function App() {
       setTechnologies(data);
     } catch (err) {
       console.error('Fetch error:', err);
-      setError('Could not fetch technologies. Please check the network connection.');
+      setError('Could not fetch technologies. Please check your network connection.');
       toast.error('Failed to load technologies dataset.');
     } finally {
       setLoading(false);
@@ -49,29 +48,8 @@ export function App() {
   };
 
   useEffect(() => {
-    let isMounted = true;
-    fetch('/data/technologies.json')
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data: Technology[]) => {
-        if (!isMounted) return;
-        setTechnologies(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        if (!isMounted) return;
-        console.error('Fetch error:', err);
-        setError('Could not fetch technologies. Please check the network connection.');
-        setLoading(false);
-      });
-
-    return () => {
-      isMounted = false;
-    };
+    loadData(0);
   }, []);
-
 
   // Check if a technology is already in the stack
   const isTechnologyAdded = (id: string) => {
@@ -123,6 +101,42 @@ export function App() {
     );
   }, [technologies, activeCategory]);
 
+  // Apply preset stack blueprint
+  const handleApplyPreset = (presetName: string, techIds: string[]) => {
+    const presetItems = technologies.filter((t) => techIds.includes(t.id));
+    if (presetItems.length === 0) return;
+
+    let addedCount = 0;
+    setSelectedStack((prev) => {
+      const existingIds = new Set(prev.map((item) => item.id));
+      const newItems = presetItems.filter((item) => !existingIds.has(item.id));
+      addedCount = newItems.length;
+      return [...prev, ...newItems];
+    });
+
+    if (addedCount > 0) {
+      toast.success(`🚀 Loaded ${addedCount} technologies from "${presetName}"!`, {
+        position: 'top-right',
+        autoClose: 2500,
+      });
+    } else {
+      toast.info(`All technologies from "${presetName}" are already in your stack.`, {
+        position: 'top-right',
+        autoClose: 2500,
+      });
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const footer = document.querySelector('footer');
+      if (footer) footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-pink-100 selection:text-pink-600">
       {/* Toast Notification Container */}
@@ -140,12 +154,17 @@ export function App() {
       />
 
       {/* Sticky Navbar */}
-      <Navbar
-        onNavigate={(sectionId) => {
-          const el = document.getElementById(sectionId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }}
-      />
+      <Navbar onNavigate={scrollToSection} />
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <Hero
+          onExploreClick={() => scrollToSection('technologies')}
+          onLearnMoreClick={() => scrollToSection('projects')}
+        />
+
+        
+      </main>
 
       
     </div>
